@@ -1,8 +1,8 @@
 ---
 description: Initialize append-only review logs under `tasks/<TICKET-ID>/reviews/`.
 scripts:
-  sh: scripts/bash/check-ticket.sh --json "{ARGS}"
-  ps: scripts/powershell/check-ticket.ps1 -Json "{ARGS}"
+  sh: scripts/bash/ensure-ticket-reviews.sh --json "{ARGS}"
+  ps: scripts/powershell/ensure-ticket-reviews.ps1 -Json "{ARGS}"
 ---
 
 ## User Input
@@ -25,11 +25,6 @@ Ensure the review log files exist (create if missing; do not overwrite):
 
 ## Outline
 
-1. Run `{SCRIPT}` to resolve ticket paths and parse JSON.
-2. Create the `reviews/` directory if missing.
-3. Create missing files from templates:
-   - `templates/ticket-mode/reviews-pr-review.template.md`
-   - `templates/ticket-mode/reviews-pr-response.template.md`
-   - `templates/ticket-mode/reviews-copilot-review.template.md`
-   - `templates/ticket-mode/reviews-copilot-response.template.md`
-4. Report what was created.
+1. Run `{SCRIPT}` to resolve ticket paths.
+2. Create missing review logs from templates.
+3. Report what was created.
