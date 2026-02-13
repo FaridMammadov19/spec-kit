@@ -1,4 +1,4 @@
-# Planning Step: <Step name>
+# <TICKET-ID>: Planning Step — <STEP-NAME>
 
 ## 1. Goal
 
